@@ -5,6 +5,7 @@ class GuessesController < ApplicationController
     guess = @game.guesses.create!(guess_params)
     
     if guess.number == @game.number
+      @game.update(completed: true)
       redirect_to game_path(@game), flash: { notice: 'Correct! You Win!'}
     else
       redirect_to game_path(@game), flash: { notice: 'Nope. Try again.'}

@@ -11,22 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506062701) do
-
-  create_table "games", force: :cascade do |t|
-    t.integer  "number"
-    t.boolean  "completed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "guesses", force: :cascade do |t|
-    t.integer  "number"
-    t.integer  "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "guesses", ["game_id"], name: "index_guesses_on_game_id"
+ActiveRecord::Schema.define(version: 0) do
 
 end
